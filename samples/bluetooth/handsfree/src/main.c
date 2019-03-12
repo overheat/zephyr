@@ -118,6 +118,8 @@ void main(void)
 {
 	int err;
 
+	printk("Starting handsfree Demo\n");
+
 	handsfree_enable();
 
 	err = bt_enable(bt_ready);
