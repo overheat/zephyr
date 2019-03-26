@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	sx9500@28 {
+		compatible = "SEMI,sx9500";
+		reg = <0x28>;
+		label = "SX9500";
+	};
+};

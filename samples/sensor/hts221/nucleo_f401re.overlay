@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-&i2c1 { /* SDA CN5.9=PB9, SCL CN5.10=PB8, ALERT CN5.1=D8=PA9 */
+&arduino_i2c{ /* SDA CN5.9=PB9, SCL CN5.10=PB8, ALERT CN5.1=D8=PA9 */
 hts221@5f {
 		compatible = "st,hts221";
 		reg = <0x5f>;

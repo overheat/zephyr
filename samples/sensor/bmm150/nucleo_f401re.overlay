@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	bmm150@10 {
+		compatible = "bosch,bmm150";
+		reg = <0x20>;
+		label = "BMM150";
+		int-gpios = <&gpioa 10 0>;
+	};
+};

@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	apds9960@29 {
+		compatible = "avago,apds9960";
+		reg = <0x29>;
+		label = "APDS9960";
+		int-gpios = <&gpioa 10 0>;
+	};
+};

@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	ms5837@76 {
+		compatible = "meas,ms5837";
+		reg = <0x76>;
+		label = "MS5837";
+	};
+};

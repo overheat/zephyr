@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	max30101@57 {
+		compatible = "max,max30101";
+		reg = <0x57>;
+		label = "MAX30101";
+		int-gpios = <&gpioa 10 0>;
+	};
+};

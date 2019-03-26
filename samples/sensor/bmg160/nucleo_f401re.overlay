@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2019 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&arduino_i2c {
+	bmg160@68 {
+		compatible = "bosch,bmg160";
+		reg = <0x68>;
+		label = "BMG160";
+		int-gpios = <&gpioa 10 0>;
+	};
+};

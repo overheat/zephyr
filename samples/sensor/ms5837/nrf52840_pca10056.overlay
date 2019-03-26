@@ -4,12 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-&i2c1 {
-    status = "ok";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
-    ms5837@76 {
-        compatible = "meas,ms5837";
-        reg = <0x76>;
-        label = "MS5837";
-    };
+&arduino_i2c{ /* SDA CN5.9=PB9, SCL CN5.10=PB8, ALERT CN5.1=D8=PA9 */
+ms5837@76 {
+		compatible = "meas,ms5837";
+		reg = <0x76>;
+		label = "MS5837";
+	};
 };

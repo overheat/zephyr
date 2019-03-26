@@ -24,6 +24,7 @@
 #define LOG_LEVEL CONFIG_SENSOR_LOG_LEVEL
 LOG_MODULE_REGISTER(APDS9960);
 
+#ifdef	CONFIG_AARON_TSUI
 static void apds9960_gpio_callback(struct device *dev,
 				  struct gpio_callback *cb, u32_t pins)
 {
@@ -38,7 +39,7 @@ static void apds9960_gpio_callback(struct device *dev,
 	k_sem_give(&drv_data->data_sem);
 #endif
 }
-
+#endif
 static int apds9960_sample_fetch(struct device *dev, enum sensor_channel chan)
 {
 	struct apds9960_data *data = dev->driver_data;
@@ -329,7 +330,7 @@ static int apds9960_sensor_setup(struct device *dev)
 
 	return 0;
 }
-
+#ifdef	CONFIG_AARON_TSUI
 static int apds9960_init_interrupt(struct device *dev)
 {
 	struct apds9960_data *drv_data = dev->driver_data;
@@ -372,7 +373,7 @@ static int apds9960_init_interrupt(struct device *dev)
 #endif
 	return 0;
 }
-
+#endif
 #ifdef CONFIG_DEVICE_POWER_MANAGEMENT
 static int apds9960_device_ctrl(struct device *dev, u32_t ctrl_command,
 				void *context)
@@ -432,12 +433,12 @@ static int apds9960_init(struct device *dev)
 	data->pdata = 0U;
 
 	apds9960_sensor_setup(dev);
-
+#ifdef	CONFIG_AARON_TSUI
 	if (apds9960_init_interrupt(dev) < 0) {
 		LOG_ERR("Failed to initialize interrupt!");
 		return -EIO;
 	}
-
+#endif
 	return 0;
 }
 
