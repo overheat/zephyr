@@ -19,6 +19,7 @@
 #define WDT_DEV_NAME DT_WDT_0_NAME
 #endif
 
+#ifndef	CONFIG_IWDG_STM32
 static void wdt_callback(struct device *wdt_dev, int channel_id)
 {
 	ARG_UNUSED(wdt_dev);
@@ -27,6 +28,7 @@ static void wdt_callback(struct device *wdt_dev, int channel_id)
 	 * Remember that SoC reset will be done soon.
 	 */
 }
+#endif
 
 void main(void)
 {
@@ -50,8 +52,10 @@ void main(void)
 	wdt_config.window.min = 0;
 	wdt_config.window.max = 5000;
 
+#ifndef	CONFIG_IWDG_STM32
 	/* Set up watchdog callback. Jump into it when watchdog expired. */
 	wdt_config.callback = wdt_callback;
+#endif
 
 	wdt_channel_id = wdt_install_timeout(wdt, &wdt_config);
 	if (wdt_channel_id < 0) {
