@@ -20,6 +20,7 @@ config SOC_MK64F12
 	select HAS_MCUX_SIM
 	select HAS_OSC
 	select HAS_MCG
+    select HAS_MCUX_RTC
 	select CPU_HAS_FPU
 
 endchoice

@@ -12,6 +12,13 @@ config SOC
 	string
 	default "mk64f12"
 
+if RTC
+
+config RTC_MCUX
+	default y
+
+endif # RTC
+
 if ADC
 
 config ADC_MCUX_ADC16
